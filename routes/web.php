@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/debugbar', function() {
+
+    $data = Array('foo' => 'bar');
+    Debugbar::info($data);
+    Debugbar::info('Current environment: '.App::environment());
+    Debugbar::error('Error!');
+    Debugbar::warning('Watch out…');
+    Debugbar::addMessage('Another message', 'mylabel');
+
+    return 'Just demoing some of the features of Debugbar';
+
+});
+
+Route::any('/practice/{n?}', 'PracticeController@index');
+
+
+
+if(config('app.env')=='local'){
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
