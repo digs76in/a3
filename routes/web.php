@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+# route to display the form for the A3 app - Bill Splitter 
+Route::get('/', 'FormController@index');
+
+# route to process the form for the A3 app - Bill Splitter 
+Route::get('/formSubmit', 'FormController@process');
+
+/**
+* Test Debugbar package, with a route /debugbar to show it is enabled
+*/
 Route::get('/debugbar', function() {
 
     $data = Array('foo' => 'bar');
@@ -28,10 +34,12 @@ Route::get('/debugbar', function() {
 
 });
 
+# route to PracticeController for testing practice examples
 Route::any('/practice/{n?}', 'PracticeController@index');
 
-
-
+/*
+* Test laravel-log-viewer package, with a route /logs that's only accessible locally.
+*/
 if(config('app.env')=='local'){
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 }
