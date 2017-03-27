@@ -31,15 +31,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label for='service' class='control-label col-sm-2'>How is the service?    </label>
+            <label for='service' class='control-label col-sm-2'>How is the service? </span>  </label>
             <div class='col-sm-10'>
                 <select name="service" id="service">
 
-                    <option value='0.2' {{((isset($service)) && ($service=="0.2"))?"selected":""}}>Good -> 20% Tip
+                    <option value='0.2' {{((isset($service)) && ($service=="0.2"))?"selected":""}} @if (old('service') == "0.2") selected="selected" @endif>Good -> 20% Tip
                     </option>
-                    <option value='0.15'  {{((isset($service)) && ($service=="0.15"))?"selected":""}}>Satisfactory -> 15% Tip
+                    <option value='0.15'  {{((isset($service)) && ($service=="0.15"))?"selected":""}} @if (old('service') == "0.15") selected="selected" @endif>Satisfactory -> 15% Tip
                     </option>
-                    <option value='0.10'  {{((isset($service)) && ($service=="0.10"))?"selected":""}}>Poor -> 10% Tip
+                    <option value='0.10'  {{((isset($service)) && ($service=="0.10"))?"selected":""}} @if (old('service') == "0.10") selected="selected" @endif>Poor -> 10% Tip
                     </option>
                 </select> 
             </div>
@@ -48,7 +48,7 @@
         <div class='form-group'>
             <div class='col-sm-offset-2 col-sm-10'>
                 <div class='checkbox'>
-                    <label><input type='checkbox' name='round' {{(isset($round)) ? "checked":"" }}> Round up</label>
+                    <label><input type='checkbox' name='round' {{(isset($round))|| old('round')=='on' ? "checked":"" }}> Round up</label>
                 </div>
             </div>
         </div>
