@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for='service' class='control-label col-sm-2'>How is the service? </span>  </label>
+            <label for='service' class='control-label col-sm-2'>How is the service? </label>
             <div class='col-sm-10'>
                 <select name="service" id="service">
 
