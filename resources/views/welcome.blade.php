@@ -35,11 +35,11 @@
             <div class='col-sm-10'>
                 <select name="service" id="service">
 
-                    <option value='0.2' {{((isset($service)) && ($service=="0.2"))?"selected":""}} @if (old('service') == "0.2") selected="selected" @endif>Good -> 20% Tip
+                    <option value='0.2' @if(count($errors) == 0) {{((isset($service)) && ($service=="0.2"))?"selected":""}} @endif @if (old('service') == "0.2") selected="selected" @endif>Good -> 20% Tip
                     </option>
-                    <option value='0.15'  {{((isset($service)) && ($service=="0.15"))?"selected":""}} @if (old('service') == "0.15") selected="selected" @endif>Satisfactory -> 15% Tip
+                    <option value='0.15' @if(count($errors) == 0) {{((isset($service)) && ($service=="0.15"))?"selected":""}} @endif @if (old('service') == "0.15") selected="selected" @endif>Satisfactory -> 15% Tip
                     </option>
-                    <option value='0.10'  {{((isset($service)) && ($service=="0.10"))?"selected":""}} @if (old('service') == "0.10") selected="selected" @endif>Poor -> 10% Tip
+                    <option value='0.10' @if(count($errors) == 0) {{((isset($service)) && ($service=="0.10"))?"selected":""}} @endif @if (old('service') == "0.10") selected="selected" @endif>Poor -> 10% Tip
                     </option>
                 </select> 
             </div>
