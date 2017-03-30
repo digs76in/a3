@@ -21,13 +21,13 @@
         <div class="form-group">    
             <label for='split' class='control-label col-sm-2'>Split # of ways? <span class="asterisk">*</span></label>
             <div class='col-sm-10'>
-                <input type='text' name='split' required id='split' value='{{ $split or old('split') }}'>
+                <input type='text' name='split' required id='split' @if(count($errors) > 0) value="{{ old('split') }}" @else value="{{ $split or '' }}" @endif>
             </div>
         </div>
         <div class="form-group">
             <label for='tab' class='control-label col-sm-2'>Total Tab? <span class="asterisk">*</span> </label>
             <div class='col-sm-10'>
-                <input type='text' name='tab' required id='tab' value='{{ $tab or old('tab') }}'>
+                <input type='text' name='tab' required id='tab' @if(count($errors) > 0) value="{{ old('tab') }}" @else value="{{ $tab or '' }}" @endif>
             </div>
         </div>
         <div class="form-group">
